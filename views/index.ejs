@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CheckIn</title>
+</head>
+<body style="text-align: center;">
+  <h1>CheckIn</h1>
+  <h2> Entries </h2>
+
+<ul class="entries">
+  <!-- Loop through quotes -->
+  <% for(var i = entries.length - 1; i >= 0; i--) {%>
+    <li class="entry">
+      <!-- Output name from the iterated quote object -->
+      <span>Name: <%= entries[i].patientName %></span>,
+      <span>ID: <%= entries[i].patientID %></span>,
+      <!-- Output quote from the iterated quote object -->
+      <span>Feeling: <%= entries[i].patientFeeling %></span>
+      <br>
+      <span>Time: <%= entries[i].timeStamp %></span>
+    </li>
+  <% } %>
+</ul>
+</body>
+</html>
