@@ -48,6 +48,8 @@ export default function SecondForm({ navigation, titleOption, color }) {
           patientFeeling: selectedOption.key,
           timeStamp: dateFormat
         }),
+      }).catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ' + error.message);
       });
       navigation.navigate("end");
     }
