@@ -42,6 +42,7 @@ export default function MainForm({ navigation }) {
         Alert.alert("Please select an option.");
     } else {
         navigation.navigate(selectedOption.key);
+        setSelectedOption(null);
     }
   }
 
@@ -55,8 +56,7 @@ export default function MainForm({ navigation }) {
       />
       <TouchableOpacity
         style={styles.nextButton}
-        onPress={onSubmit}
-        color={"black"}>
+        onPress={onSubmit}>
             <View style={styles.nextText}>
                 <Text style={styles.nextText}>Continue</Text>
             </View>
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
   },
   nextText: {
     backgroundColor: colors.blue,
-    padding: 5,
-    borderRadius: 10,
+    padding: 4,
+    borderRadius: 7,
     fontSize: 25,
     color: "white"
   }

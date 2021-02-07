@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { colors } from "./colors";
 
 const TitleHeader = ({ color }) => {
 
     return (
       <View style={styles.viewStyle}>
-          <Text style={{color: color, fontSize: 85,
-            fontWeight: "bold", marginBottom: 20, marginTop: 70}}>CheckIn</Text>
+          <Text style={[styles.titleText, {color: color}]}>CheckIn</Text>
       </View>
     );
 
@@ -21,8 +19,8 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 85,
         fontWeight: "bold",
-        marginBottom: 20,
-        marginTop: 70,
+        marginTop: 20,
+        marginBottom: 5
     }
 });
   

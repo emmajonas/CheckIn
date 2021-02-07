@@ -1,18 +1,20 @@
 import React from 'react';
 import TitleHeader from './TitleHeader';
-import { View, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { colors } from './colors';
 import Prompt from './Prompt';
 import SecondForm from './SecondForm';
+import SettingsButton from './settingsbutton';
 
 const FearfulPage = ({ navigation }) => {
 
     return (
-        <View style = {styles.viewStyle}>
-            <TitleHeader color={colors.pink}/>
+        <SafeAreaView style = {styles.viewStyle}>
+            <SettingsButton navigation={navigation}/>
+            <TitleHeader color={colors.green}/>
             < Prompt title="Which describes you best?"/>
-            <SecondForm navigation={navigation} titleOption="fearful" color={colors.pink}/>
-        </View>
+            <SecondForm navigation={navigation} titleOption="fearful" color={colors.green}/>
+        </SafeAreaView>
     );
 
 };
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
     viewStyle: {
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: 10
+        marginHorizontal: 25
     }
 });
   

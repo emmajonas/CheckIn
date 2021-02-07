@@ -16,6 +16,8 @@ import SurprisedPage from "./src/components/SurprisedPage";
 import FearfulPage from "./src/components/FearfulPage";
 import SadPage from "./src/components/SadPage";
 import AngryPage from "./src/components/AngryPage";
+import SettingsPage from "./src/components/SettingsPage";
+import EndPage from "./src/components/EndPage";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +31,8 @@ const App = () => {
         <Stack.Screen name="fearful" component={FearfulPage} />
         <Stack.Screen name="sad" component={SadPage} />
         <Stack.Screen name="angry" component={AngryPage} />
+        <Stack.Screen name="end" component={EndPage} />
+        <Stack.Screen name="settings" component={SettingsPage} options={{gestureDirection: 'horizontal-inverted'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

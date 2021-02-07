@@ -2,9 +2,14 @@ import * as React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import RadioButton from './Radio';
 import * as opts from './options';
+import global from "./global";
 
-export default function SecondForm({ navigation, titleOption, color}) {
+export default function SecondForm({ navigation, titleOption, color }) {
   const [selectedOption, setSelectedOption] = React.useState(null);
+  const date = Date.now();
+  const dateFormat = new Intl.DateTimeFormat('en-US', 
+    {year: 'numeric', month: '2-digit',day: '2-digit', 
+    hour: '2-digit', minute: '2-digit'}).format(date);
 
   let options; 
   if (titleOption == "happy") {
@@ -30,6 +35,21 @@ export default function SecondForm({ navigation, titleOption, color}) {
   const onSubmit = () => {
     if (selectedOption == null) {
         Alert.alert("Please select an option.");
+    } else {
+      fetch('http://localhost:3000', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          patientName: global.name,
+          patientID: global.id,
+          patientFeeling: selectedOption.key,
+          timeStamp: dateFormat
+        }),
+      });
+      navigation.navigate("end");
     }
   }
 
@@ -59,7 +79,7 @@ export default function SecondForm({ navigation, titleOption, color}) {
         onPress={onSubmit}
         color={"black"}>
             <View style={[styles.nextText, {backgroundColor: color}]}>
-                <Text style={styles.nextText}>Finished</Text>
+                <Text style={styles.nextText}>Done</Text>
             </View>
       </TouchableOpacity>
       </View>
@@ -71,14 +91,13 @@ const styles = StyleSheet.create({
   container: {
       flexDirection: "row",
       justifyContent: "space-between",
-      paddingHorizontal: 20
   },
   nextButton: {
       alignItems: "center",
   },
   nextText: {
-    padding: 5,
-    borderRadius: 10,
+    padding: 4,
+    borderRadius: 7,
     fontSize: 25,
     color: "white"
   }
