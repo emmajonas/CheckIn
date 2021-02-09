@@ -18,22 +18,22 @@ This is where our app, CheckIn, comes into play. CheckIn aims to provide a simpl
 
 The app starts with the five most basic, describable feelings and allows the user to select one of them.
 
-<img src="pics/Picture1.png" width=250 >
+<div style="text-align: center"><img src="pics/Picture1.png" width=250 ></div>
 
 Then, it narrows the choices down based on the user's initial selection.
 
-<img src="pics/Picture3.png" width=250>
-<img src="pics/Picture4.png" width=250>
-<img src="pics/Picture5.png" width=250>
-<img src="pics/Picture6.png" width=250>
+<img src="pics/Picture3.png" width=250 display="inline">
+<img src="pics/Picture4.png" width=250 display="inline">
+<img src="pics/Picture5.png" width=250 display="inline">
+<img src="pics/Picture6.png" width=250 display="inline">
 
 A nurse or worker can input the resident's information, such as their name and patient ID in the settings page.
 
-<img src="pics/Picture2.png" width=250>
+<div style="text-align: center"><img src="pics/Picture2.png" width=250></div>
 
 Once the resident has chosen their current feeling, they are able to submit their information, which goes to an express.js server and is stored in a mongoDB database.
 
-<img src="pics/Picture7.png" width=250>
+<div style="text-align: center"><img src="pics/Picture7.png" width=250></div>
 
 Ideally, a nurse or doctor would have access to the patient information via a companion web or mobile app, which would notify them of any significant trends. This would allow the nurses to best accomodate their patient's needs and allocate their time accordingly.
 
